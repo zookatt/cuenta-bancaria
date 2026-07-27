@@ -6,6 +6,11 @@ public class Account {
     protected int numberOfWithdrawals = 0;
     protected float annualInterestRate;
     protected float monthlyFee;
+    
+    public Account(float balance, float annualInterestRate) {
+        this.balance = balance;
+        this.annualInterestRate = annualInterestRate;
+    }
 }
 
 // Desarrollar un programa que modele una cuenta bancaria que tiene
