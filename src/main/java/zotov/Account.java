@@ -29,6 +29,12 @@ public class Account {
             numberOfWithdrawals++;
         }
     }
+
+    public void calculateMonthlyInterest() {
+        float monthlyInterestRate = annualInterestRate / 12;
+        float interest = balance * (monthlyInterestRate / 100);
+        balance += interest;
+    }
 }
 
 // Desarrollar un programa que modele una cuenta bancaria que tiene
