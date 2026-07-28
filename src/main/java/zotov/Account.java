@@ -18,6 +18,17 @@ public class Account {
             numberOfDeposits++;
         }
     }
+
+    public void withdraw(float amount) {
+        if (amount <= 0) {
+            System.err.println("Incorrect amount of withdraw");
+        } else if (amount > balance) {
+            System.err.println("No balance available to withdraw");
+        } else {
+            balance -= amount;
+            numberOfWithdrawals++;
+        }
+    }
 }
 
 // Desarrollar un programa que modele una cuenta bancaria que tiene
@@ -36,10 +47,9 @@ public class Account {
 // siguientes métodos:
 // - Consignar una cantidad de dinero en la cuenta actualizando su saldo.
 // - Retirar una cantidad de dinero en la cuenta actualizando su saldo. El valor
-// a
-// retirar no debe superar el saldo.
+// a retirar no debe superar el saldo.
 // - Calcular el interés mensual de la cuenta y actualiza el saldo
 // correspondiente.
 // - Extracto mensual: actualiza el saldo restándole la comisión mensual y
 // calculando el interés mensual correspondiente (invoca el método anterior).
-// - Imprimir: retorno los valores de los atributos.
+// - Imprimir: retorno los valores de los atributos
