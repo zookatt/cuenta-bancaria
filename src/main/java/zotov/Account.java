@@ -35,6 +35,11 @@ public class Account {
         float interest = balance * (monthlyInterestRate / 100);
         balance += interest;
     }
+
+    public void calculateMonthlyStatement() {
+        balance -= monthlyFee;
+        calculateMonthlyInterest();
+    }
 }
 
 // Desarrollar un programa que modele una cuenta bancaria que tiene
