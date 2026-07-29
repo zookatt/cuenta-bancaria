@@ -24,6 +24,15 @@ public class SavingsAccount extends Account {
         }
     }
 
+    public void calculateMonthlyStatement() {
+        if (numberOfWithdrawals > 4) {
+            monthlyFee += (numberOfWithdrawals - 4) * 1000;
+        }
+
+        super.calculateMonthlyStatement();
+        active = balance >= 10000;
+    }
+
     // Cuenta de ahorros: posee un atributo para determinar si la cuenta de ahorros
     // está activa (tipo boolean). Si el saldo es menor a $10000, la cuenta está
     // inactiva, en caso contrario se considera activa. Los siguientes métodos se
