@@ -3,9 +3,13 @@ package zotov;
 public class SavingsAccount extends Account {
     private boolean active;
 
+    private void updateActiveStatus() {
+        active = balance >= 10000;
+    }
+
     public SavingsAccount(float balance, float annualInterestRate) {
         super(balance, annualInterestRate);
-        active = balance >= 10000;
+        updateActiveStatus();
     }
 
     public void deposit(float amount) {
@@ -30,7 +34,7 @@ public class SavingsAccount extends Account {
         }
 
         super.calculateMonthlyStatement();
-        active = balance >= 10000;
+        updateActiveStatus();
     }
 
     // Cuenta de ahorros: posee un atributo para determinar si la cuenta de ahorros
