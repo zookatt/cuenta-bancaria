@@ -37,6 +37,14 @@ public class SavingsAccount extends Account {
         updateActiveStatus();
     }
 
+    public String print() {
+        int transactions = numberOfDeposits + numberOfWithdrawals;
+
+        return "Balance: " + balance +
+                "\nMonthly fee: " + monthlyFee +
+                "\nNumber of transactions: " + transactions;
+    }
+
     // Cuenta de ahorros: posee un atributo para determinar si la cuenta de ahorros
     // está activa (tipo boolean). Si el saldo es menor a $10000, la cuenta está
     // inactiva, en caso contrario se considera activa. Los siguientes métodos se
