@@ -8,6 +8,14 @@ public class SavingsAccount extends Account {
         active = balance >= 10000;
     }
 
+    public void deposit(float amount) {
+        if (active) {
+            super.deposit(amount);
+        } else {
+            System.err.println("The account is inactive");
+        }
+    }
+
     // Cuenta de ahorros: posee un atributo para determinar si la cuenta de ahorros
     // está activa (tipo boolean). Si el saldo es menor a $10000, la cuenta está
     // inactiva, en caso contrario se considera activa. Los siguientes métodos se
