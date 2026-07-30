@@ -7,6 +7,16 @@ public class CurrentAccount extends Account {
         super(balance, annualInterestRate);
     }
 
+    public void withdraw(float amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            overdraft = amount - balance;
+            balance = 0;
+        }
+        numberOfWithdrawals++;
+    }
+
 }
 // Cuenta corriente: posee un atributo de sobregiro,
 // el cual se inicializa en cero.
