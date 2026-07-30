@@ -17,6 +17,20 @@ public class CurrentAccount extends Account {
         numberOfWithdrawals++;
     }
 
+    public void deposit(float amount) {
+        if (overdraft > 0) {
+            if (amount >= overdraft) {
+                amount -= overdraft;
+                overdraft = 0;
+                super.deposit(amount);
+            } else {
+                overdraft -= amount;
+                numberOfDeposits++;
+            }
+        } else {
+            super.deposit(amount);
+        }
+    }
 }
 // Cuenta corriente: posee un atributo de sobregiro,
 // el cual se inicializa en cero.
@@ -25,8 +39,10 @@ public class CurrentAccount extends Account {
 // Retirar: se retira dinero de la cuenta actualizando su saldo.
 // Se puede retirar dinero superior al saldo. El dinero
 // que se debe queda como sobregiro.
+
 // Consignar: invoca al método heredado. Si hay sobregiro,
 // la cantidad consignada reduce el sobregiro.
+
 // Extracto mensual: invoca al método heredado.
 // Un nuevo método imprimir que retorna el saldo de la cuenta,
 // la comisión mensual, el número de transacciones realizadas
