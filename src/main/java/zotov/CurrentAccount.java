@@ -11,7 +11,7 @@ public class CurrentAccount extends Account {
         if (amount <= balance) {
             balance -= amount;
         } else {
-            overdraft = amount - balance;
+            overdraft += amount - balance;
             balance = 0;
         }
         numberOfWithdrawals++;
