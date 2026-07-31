@@ -31,6 +31,11 @@ public class CurrentAccount extends Account {
             super.deposit(amount);
         }
     }
+
+    public void calculateMonthlyStatement() {
+        super.calculateMonthlyStatement();
+    }
+
 }
 // Cuenta corriente: posee un atributo de sobregiro,
 // el cual se inicializa en cero.
