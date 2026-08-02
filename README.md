@@ -20,11 +20,14 @@ La clase base incluye operaciones para:
 - generar el extracto mensual,
 - imprimir los datos de la cuenta.
 
+Las reglas fijas del dominio se expresan con constantes para evitar magic numbers y mejorar la legibilidad del código.
+
 ## Clases del proyecto
 
 ### Cuenta base
 
 - `Account.java`: define el comportamiento general de una cuenta bancaria.
+- Calcula el interés mensual usando constantes para los meses del año y el divisor porcentual.
 
 ### Cuenta de ahorros
 
@@ -32,6 +35,7 @@ La clase base incluye operaciones para:
 - Si el saldo es menor a $10000, la cuenta se considera inactiva.
 - El método de consignar y retirar solo funciona si la cuenta está activa.
 - El extracto mensual aplica una comisión adicional si hay más de 4 retiros.
+- El saldo mínimo, el límite de retiros gratuitos y la comisión adicional se definen como constantes.
 
 ### Cuenta corriente
 

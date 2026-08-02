@@ -1,6 +1,9 @@
 package zotov;
 
 public class Account {
+    private static final int MONTHS_IN_YEAR = 12;
+    private static final int PERCENTAGE_DIVISOR = 100;
+
     protected float balance;
     protected int numberOfDeposits = 0;
     protected int numberOfWithdrawals = 0;
@@ -31,8 +34,8 @@ public class Account {
     }
 
     public void calculateMonthlyInterest() {
-        float monthlyInterestRate = annualInterestRate / 12;
-        float interest = balance * (monthlyInterestRate / 100);
+        float monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR;
+        float interest = balance * (monthlyInterestRate / PERCENTAGE_DIVISOR);
         balance += interest;
     }
 
