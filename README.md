@@ -63,8 +63,8 @@ El proyecto incluye pruebas unitarias para verificar el comportamiento de las cl
 
 #### Diagrama UML:
 
-![Diagrama UML](../cuenta-bancaria/docs/images/diagramm-uml.png)
+![Diagrama UML](docs/images/diagramm-uml.png)
 
 #### Cobertura de los tests:
 
-![Cobertura de los tests](../cuenta-bancaria/docs/images/test-coverage.png)
+![Cobertura de los tests](docs/images/test-coverage.png)
